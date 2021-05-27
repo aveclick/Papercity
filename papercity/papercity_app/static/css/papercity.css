@@ -3,8 +3,8 @@ body{
   font-family: Alegreya Sans SC;
 }
 header {
-  background-color: white;
-  border-bottom: 3px solid midnightblue;
+  background-color: black;
+  border-bottom: 20px solid black;
 }
 
 nav {
@@ -32,6 +32,7 @@ nav a {
   font-size: 28px;
   line-height: 1;
   letter-spacing: 3px;
+  color: #B0B0B0;
 }
 .topmenu > li > a:before {
   content: "";
@@ -47,6 +48,10 @@ nav a {
   opacity: 0;
   transition: .3s;
 }
+.topmenu > li > a:hover {
+  color: white;
+}
+
 
 .submenu {
   position: absolute;

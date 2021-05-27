@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Бумажный город{% endblock %}</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" >
+    <link rel ="stylesheet" href="{% static 'css/papercity.css'%}">
 </head>
 <body>
-
+<header>
+    <nav>
+        <ul class="topmenu">
+            {% load static %}
+            <li><a href=""><img src="{% static 'img/logo.png' %}" alt="" width="200" height="100"></a></li>
+            <li><a href="" class="down" style="text-decoration: none">Книги</a>
+                <ul class="submenu">
+                    <li><a href="" style="text-decoration: none">Все книги</a></li>
+                    <li><a href="" style="text-decoration: none">Художественная литература</a></li>
+                    <li><a href="" style="text-decoration: none">Литература для детей</a></li>
+                    <li><a href="" style="text-decoration: none">Учебная литература</a></li>
+                    <li><a href="" style="text-decoration: none">Научная литература</a></li>
+                    <li><a href="" style="text-decoration: none">Комиксы</a></li>
+                </ul>
+            </li>
+            <li><a href="" class="down" style="text-decoration: none">Канцелярия</a>
+                <ul class="submenu">
+                    <li><a href="" style="text-decoration: none">Все канцтовары</a></li>
+                    <li><a href="" style="text-decoration: none">Обложки для документов</a></li>
+                    <li><a href="" style="text-decoration: none">Офисная канцелярия</a></li>
+                    <li><a href="" style="text-decoration: none">Письменные принадлежности</a></li>
+                </ul>
+            </li>
+            <li><a href="" class="down" style="text-decoration: none">Профиль</a>
+                <ul class="submenu">
+                    <li><a href="" style="text-decoration: none">Выход</a></li>
+                </ul>
+            </li>
+            <li><a href="" style="text-decoration: none">Корзина</a></li>
+              <div class="topnav-right">
+            <li><form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Найти книгу или товар" aria-label="Search">
+                <input type="submit" value="&#128270;">
+            </form></li>
+                </div>
+        </ul>
+    </nav>
+</header>
+{% block content%}
+{% endblock %}
 </body>
 </html>

@@ -1,40 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet');
-body{
+body
+{
   font-family: Alegreya Sans SC;
 }
-header {
+
+header
+{
   background-color: black;
   border-bottom: 20px solid black;
 }
 
-nav {
+nav
+{
   text-align: left;
   padding: 20px 0 0;
 }
-nav ul {
+
+nav ul
+{
   list-style: none;
   margin: 0;
   padding: 0;
 }
-nav a {
+
+nav a
+{
   text-decoration: none;
   display: block;
   color: #222;
 }
-.topmenu > li {
+
+.topmenu > li
+{
   display: inline-block;
   position: relative;
 }
-.topmenu > li > a {
+
+.topmenu > li > a
+{
   position: relative;
-  padding: 0 45px;
+  padding: 0 40px;
   font-family: Alegreya Sans SC;
   font-size: 28px;
   line-height: 1;
   letter-spacing: 3px;
   color: #B0B0B0;
 }
-.topmenu > li > a:before {
+
+.topmenu > li > a:before
+{
   content: "";
   position: absolute;
   z-index: 5;
@@ -48,12 +62,15 @@ nav a {
   opacity: 0;
   transition: .3s;
 }
-.topmenu > li > a:hover {
+
+.topmenu > li > a:hover
+{
   color: white;
 }
 
 
-.submenu {
+.submenu
+{
   position: absolute;
   z-index: 4;
   left: 50%;
@@ -70,67 +87,125 @@ nav a {
   transform: translate(-50%, 20px);
   transition: .3s;
 }
-.topmenu > li:hover .submenu {
+
+.topmenu > li:hover .submenu
+{
   visibility: visible;
   opacity: 1;
   transform: translate(-50%, 0);
 }
-.submenu a {
+
+.submenu a
+{
   font-family: Alegreya Sans SC;
   font-size: 16px;
   letter-spacing: 1px;
   padding: 5px 10px;
   transition: .3s linear;
 }
-.submenu a:hover {background: #e8e8e8;}
 
-.topnav-right {
+.submenu a:hover
+{
+  background: #e8e8e8;
+}
+
+.topnav-right
+{
   float: right;
-    margin-top: 30px;
+  margin-top: 30px;
   margin-right: 10px;
 }
- input[type="search"] {
-   width: 250px;
- }
 
-  #footer {
-    position: relative; /* Фиксированное положение */
-    left: 0; bottom: 0; /* Левый нижний угол */
-    padding: 10px; /* Поля вокруг текста */
-    background: black; /* Цвет фона */
-    width: 100%; /* Ширина слоя */
-   }
-
-#footer a {
-    margin-top: 10px;
-    display: block; /* Ссылка как блочный элемент */
-    text-decoration: none; /* Подчеркивание у ссылок убираем */
-    color: #b0b0b0;
+input[type="search"]
+{
+  width: 250px;
 }
 
-#footer a:hover {
-    color: white;
-    display: block; /* Ссылка как блочный элемент */
-    text-decoration: none; /* Подчеркивание у ссылок убираем */
+#footer
+{
+  position: relative; /* Фиксированное положение */
+  left: 0; bottom: 0; /* Левый нижний угол */
+  padding: 10px; /* Поля вокруг текста */
+  background: black; /* Цвет фона */
+  width: 100%; /* Ширина слоя */
 }
 
-#footer h4 {
-    color: white;
-    border-bottom: 2px solid midnightblue; /* Параметры линии под текстом */
-    font-weight: normal; /* Убираем жирное начертание */
-    padding-bottom: 5px; /* Расстояние от текста до линии */
+#footer a
+{
+  margin-top: 10px;
+  display: block; /* Ссылка как блочный элемент */
+  text-decoration: none; /* Подчеркивание у ссылок убираем */
+  color: #b0b0b0;
 }
 
-#footer1 {
+#footer a:hover
+{
+  color: white;
+  display: block; /* Ссылка как блочный элемент */
+  text-decoration: none; /* Подчеркивание у ссылок убираем */
+}
+
+#footer h4
+{
+  color: white;
+  border-bottom: 2px solid midnightblue; /* Параметры линии под текстом */
+  font-weight: normal; /* Убираем жирное начертание */
+  padding-bottom: 5px; /* Расстояние от текста до линии */
+}
+
+#footer1
+{
   position: relative; /* Фиксированное положение */
   left: 0; bottom: 0; /* Левый нижний угол */
   background: #b0b0b0; /* Цвет фона */
   color: black;
   width: 100%;
-  height: 60px;
+  height: 65px;
 }
 
-#footer1 h5 {
+#footer1 h5
+{
   margin-left: 100px;
   padding: 20px;
+}
+
+#slider
+{
+  margin-top: 50px;
+  list-style: none;
+  position: relative;
+  width: 1300px;
+  height: 300px;
+}
+
+#slider img
+{
+  position: absolute;
+  max-width:1300px;
+  max-height:300px;
+}
+
+.container
+{
+  min-width: 1370px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.container1
+{
+  max-width: 1300px;
+  min-width: 750px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.carousel-control-prev-icon
+{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon
+{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }

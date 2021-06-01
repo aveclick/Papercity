@@ -209,3 +209,58 @@ input[type="search"]
 {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
+
+a
+{
+    text-decoration: none;
+}
+
+ul,
+ul ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#wrapper
+{
+    width: 220px;
+    font-size: 0.8125em;
+}
+
+.menu
+{
+    width: auto;
+    height: auto;
+}
+
+.menu > li > a
+{
+    background-color: lightsteelblue;
+    width: 100%;
+    font-size: 20px;
+    color: black;
+}
+
+.menu ul li a {
+    width: 100%;
+    display: block;
+    position: relative;
+    font-size: 18px;
+}
+
+.menu > li > ul li:hover a,
+.menu > li > ul li:hover a:before {
+ color: darkorange;
+}
+
+button
+{
+    margin: 5px auto auto auto;
+    background: darkorange;
+    padding: 3px 7px;
+    color: darkorange;
+    border-radius: 5px;
+    border: 1px solid orangered;
+}

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" >
     <link rel ="stylesheet" href="{% static 'css/papercity.css'%}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
 </head>
 
 <script>
@@ -64,13 +68,127 @@ $(document).ready(function () {
   moveTo('next');
 });
 </script>
+
+<script>
+    $(document).ready(function() {
+    var $toggleButton = $('.toggle-button'),
+        $menuWrap = $('.menu-wrap');
+    $toggleButton.on('click', function() {
+        $(this).toggleClass('button-open');
+        $menuWrap.toggleClass('menu-show');
+    });
+});
+</script>
 <body>
+<div class="menu-wrap">
+    <div class="menu-sidebar">
+                        <span class="toggle-button">
+            <button style="color: white; background: black; border: black; font-size: 25px; float: right">X</button>
+    </span>
+        <h3 style="color: white; margin: 10px 0 0 10px">Каталог</h3>
+        <hr style="color: white;">
+        <ul class="menu1">
+            <li><a href="/cat1" style="color:white;">Художественная литература</a>
+                <ul>
+                    <div class="ul1">
+                    <li><a href="/">Поэзия</a></li>
+                    <li><a href="/">Проза</a></li>
+                    <li><a href="/">Фантастика</a></li>
+                    <li><a href="/">Фэнтези</a></li>
+                    <li><a href="/">Детективы</a></li>
+                    <li><a href="/">Приключения</a></li>
+                    <li><a href="/">Биографии</a></li>
+                    <li><a href="/">Романы</a></li>
+                    <li><a href="/">Драматургия</a></li>
+                    <li><a href="/">Графические романы и манга</a></li>
+                    </div>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat2" style="color:white;">Литература для детей</a>
+                <ul>
+                    <li><a href="/">Художественная литература</a></li>
+                    <li><a href="/">Дошкольное обучение</a></li>
+                    <li><a href="/">Детская научно-популярная литература</a></li>
+                    <li><a href="/">Творчество и досуг</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat3" style="color:white;">Учебная литература</a>
+                <ul>
+                    <li><a href="/">Педагогика</a></li>
+                    <li><a href="/">Словари и разговорники</a></li>
+                    <li><a href="/">Гуманитарные дисциплины</a></li>
+                    <li><a href="/">Общественные дисциплины</a></li>
+                    <li><a href="/">Естественнонаучные дисциплины</a></li>
+                    <li><a href="/">Прикладные дисциплины</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat4" style="color:white;">Иностранные языки</a>
+                <ul>
+                    <li><a href="/">Литаратура на английском языке</a></li>
+                    <li><a href="/">Литаратура на немецком языке</a></li>
+                    <li><a href="/">Литаратура на испанском языке</a></li>
+                    <li><a href="/">Литаратура на других языках</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat5" style="color:white;">Искусство</a>
+                <ul>
+                    <li><a href="/">Искусствоведение</a></li>
+                    <li><a href="/">Архитектура и дизайн</a></li>
+                    <li><a href="/">Живопись и графика</a></li>
+                    <li><a href="/">Декоративно-прикладное искусство</a></li>
+                    <li><a href="/">Фотография</a></li>
+                    <li><a href="/">Музыка</a></li>
+                    <li><a href="/">Мода</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat6" style="color:white;">Психология и эзотерика</a>
+                <ul>
+                    <li><a href="/">Психология</a></li>
+                    <li><a href="/">Эзотерика</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat7" style="color:white;">Медицина, здоровье, дети</a>
+                <ul>
+                    <li><a href="/">Нетрадиционная медицина</a></li>
+                    <li><a href="/">Медицина и фармакология</a></li>
+                    <li><a href="/">Для родителей</a></li>
+                    <li><a href="/">Красота и здоровье</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat8" style="color:white;">Научная литература</a>
+                <ul>
+                    <li><a href="/">Технические науки</a></li>
+                    <li><a href="/">Естественные науки</a></li>
+                    <li><a href="/">Гуманитарные науки</a></li>
+                    <li><a href="/">Философия</a></li>
+                </ul>
+            </li>
+            <br>
+            <li><a href="/cat9" style="color:white;">История. Политика</a>
+                <ul>
+                    <li><a href="/">История</a></li>
+                    <li><a href="/">Политика</a></li>
+                    <li><a href="/">Социология</a></li>
+                    <li><a href="/">Военное дело</a></li>
+                </ul>
+            </li>
+            <br>
+        </ul>
+    </div>
+</div>
 <header>
     <nav>
-        <ul class="topmenu">
+        <ul class="topmenu">з
             {% load static %}
-            <li><a href=""><img src="{% static 'img/logo.jpg' %}" alt="" width="240" height="100"></a></li>
-            <li><a href="" class="down" style="text-decoration: none">Книги</a>
+            <li><a href="/home"><img src="{% static 'img/logo.jpg' %}" alt="" width="240" height="100"></a></li>
+            <li><a href="/books" class="down" style="text-decoration: none">Книги</a>
                 <ul class="submenu">
                     <li><a href="" style="text-decoration: none">Все книги</a></li>
                     <li><a href="" style="text-decoration: none">Художественная литература</a></li>

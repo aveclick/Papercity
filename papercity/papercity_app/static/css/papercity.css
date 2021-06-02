@@ -235,3 +235,99 @@ input[type="search"]
 {
   margin-top: 10px;
 }
+
+a
+{
+    text-decoration: none;
+}
+
+ul,
+ul ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#wrapper
+{
+    width: 220px;
+    font-size: 0.8125em;
+}
+
+.menu
+{
+    width: auto;
+    height: auto;
+}
+
+.menu > li > a
+{
+    width: 100%;
+    font-size: 20px;
+    color: black;
+}
+
+.menu ul li a {
+    width: 100%;
+    display: block;
+    position: relative;
+    font-size: 18px;
+}
+
+.menu > li > ul li:hover a,
+.menu > li > ul li:hover a:before {
+ color: darkorange;
+}
+
+button
+{
+    margin: 5px auto auto auto;
+    background: darkorange;
+    padding: 3px 7px;
+    color: darkorange;
+    border-radius: 5px;
+    border: 1px solid orangered;
+}
+
+.menu-wrap {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 500px;
+    margin-left: -500px;
+    font-size: 18px;
+    overflow: auto;
+    transition: .25s;
+    z-index: 10;
+}
+.menu-show {
+    margin-left: 0;
+  box-shadow: 4px 2px 15px 1px midnightblue;
+}
+
+   .menu-sidebar ul {
+    width: 270px; /* Ширина меню */
+    list-style: none; /* Для списка убираем маркеры */
+    margin: 10px 0 0 10px; /* Нет отступов вокруг */
+    padding: 0; /* Убираем поля вокруг текста */
+    font-size: 18px; /* Размер названий в пункте меню */
+   }
+   .menu-sidebar li ul {
+    position: absolute; /* Подменю позиционируются абсолютно */
+    display: none; /* Скрываем подменю */
+    margin-left: 220px; /* Сдвигаем подменю вправо */
+    margin-top: -25px; /* Сдвигаем подменю вверх */
+   }
+
+   .menu-sidebar li a:hover {
+    background-color: lightsteelblue; /* Цвет фона активного пункта */
+   }
+   .menu-sidebar li:hover ul {
+    display: block; /* При выделении пункта курсором мыши отображается подменю */
+   }
+
+   .menu-sidebar li a{
+     color: white;
+   }

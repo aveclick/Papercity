@@ -11,8 +11,39 @@
   <button id="prev" class="carousel-control-prev" style="margin-left: 65px"><span class="carousel-control-prev-icon"></span></button>
 <br>
 </div>
+
 <div class="container1">
-<h2><b>Новинки</b></h2>
+  <h2><b>Новинки</b></h2>
+  <div class="row row-cols-1 row-cols-md-5 g-5">
+    {% for books in object_list %}
+   <div class="col">
+    <div class="card" style="height: 450px; width: 235px">
+      <div class="card-body">
+        <img src="{{books.photo.url}}" class="card-img-top" height="280" width="200" alt="...">
+        <h5 class="card-title">{{books.title}}</h5>
+        <p class="card-text">
+          {% for author in books.author.all %}
+          {{author.name}}
+          {% endfor %}
+        </p>
+        <div class="card_footer">
+          <div class="row row-cols-2">
+            <div class="col">
+              <h4><b>{{books.price}} ₽</b></h4>
+            </div>
+            <div class="col">
+              <button style="margin-left: 35px">Купить</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+  </div>
   <br>
 </div>
+
+
 {% endblock %}

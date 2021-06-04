@@ -1,0 +1,45 @@
+#,id,content_type_id,codename,name
+1,1,1,add_logentry,Can add log entry
+2,2,1,change_logentry,Can change log entry
+3,3,1,delete_logentry,Can delete log entry
+4,4,1,view_logentry,Can view log entry
+5,5,2,add_permission,Can add permission
+6,6,2,change_permission,Can change permission
+7,7,2,delete_permission,Can delete permission
+8,8,2,view_permission,Can view permission
+9,9,3,add_group,Can add group
+10,10,3,change_group,Can change group
+11,11,3,delete_group,Can delete group
+12,12,3,view_group,Can view group
+13,13,4,add_user,Can add user
+14,14,4,change_user,Can change user
+15,15,4,delete_user,Can delete user
+16,16,4,view_user,Can view user
+17,17,5,add_contenttype,Can add content type
+18,18,5,change_contenttype,Can change content type
+19,19,5,delete_contenttype,Can delete content type
+20,20,5,view_contenttype,Can view content type
+21,21,6,add_session,Can add session
+22,22,6,change_session,Can change session
+23,23,6,delete_session,Can delete session
+24,24,6,view_session,Can view session
+25,25,7,add_category,Can add Категория
+26,26,7,change_category,Can change Категория
+27,27,7,delete_category,Can delete Категория
+28,28,7,view_category,Can view Категория
+29,29,8,add_genre,Can add Жанр
+30,30,8,change_genre,Can change Жанр
+31,31,8,delete_genre,Can delete Жанр
+32,32,8,view_genre,Can view Жанр
+33,33,9,add_author,Can add Автор
+34,34,9,change_author,Can change Автор
+35,35,9,delete_author,Can delete Автор
+36,36,9,view_author,Can view Автор
+37,37,10,add_reviews,Can add Отзыв
+38,38,10,change_reviews,Can change Отзыв
+39,39,10,delete_reviews,Can delete Отзыв
+40,40,10,view_reviews,Can view Отзыв
+41,41,11,add_books,Can add Книга
+42,42,11,change_books,Can change Книга
+43,43,11,delete_books,Can delete Книга
+44,44,11,view_books,Can view Книга

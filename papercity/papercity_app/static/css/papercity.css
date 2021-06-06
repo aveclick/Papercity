@@ -251,7 +251,7 @@ ul ul
 
 #wrapper
 {
-    width: 220px;
+    width: 310px;
     font-size: 0.8125em;
 }
 
@@ -295,8 +295,8 @@ button
     position: fixed;
     top: 0;
     height: 100%;
-    width: 500px;
-    margin-left: -500px;
+    width: 550px;
+    margin-left: -550px;
     font-size: 18px;
     overflow: auto;
     transition: .25s;
@@ -308,7 +308,7 @@ button
 }
 
    .menu-sidebar ul {
-    width: 270px; /* Ширина меню */
+    width: 350px; /* Ширина меню */
     list-style: none; /* Для списка убираем маркеры */
     margin: 10px 0 0 10px; /* Нет отступов вокруг */
     padding: 0; /* Убираем поля вокруг текста */

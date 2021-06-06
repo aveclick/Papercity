@@ -206,11 +206,15 @@ $(document).ready(function () {
                     <li><a href="" style="text-decoration: none">Письменные принадлежности</a></li>
                 </ul>
             </li>
-            <li><a href="" class="down" style="text-decoration: none">Профиль</a>
+            {% if user.is_authenticated %}
+            <li><a href="/accounts/profile" class="down" style="text-decoration: none">Профиль</a>
                 <ul class="submenu">
-                    <li><a href="" style="text-decoration: none">Выход</a></li>
+                    <li><a href="{% url 'logout' %}" style="text-decoration: none">Выход</a></li>
                 </ul>
             </li>
+            {% else %}
+            <li><a href="/accounts/login" class="down" style="text-decoration: none">Профиль</a></li>
+            {% endif %}
             <li><a href="" style="text-decoration: none">Корзина</a></li>
               <div class="topnav-right">
             <li><form class="d-flex">

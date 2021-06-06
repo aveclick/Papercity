@@ -3,7 +3,11 @@ body
 {
   font-family: Alegreya Sans SC;
 }
-
+.registration
+{
+    font-size: 20px;
+    padding: 5px;
+}
 header
 {
   background-color: black;
@@ -213,6 +217,12 @@ input[type="search"]
   color: white;
   margin-left: 7%;
   padding: 10px;
+}
+
+.container3
+{
+    max-width: 285px;
+    margin: 100px 600px;
 }
 
 .carousel-control-prev-icon

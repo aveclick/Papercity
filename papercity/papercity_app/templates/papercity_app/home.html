@@ -3,21 +3,21 @@
 <div class="container">
   <ul id="slider">
     {% load static %}
-    <li><img src="{% static 'img/slider1.jpg' %}" alt="" width="1300" height="300"></li>
-    <li><img src="{% static 'img/slider2.jpg' %}" alt="" width="1300" height="300"></li>
-    <li><img src="{% static 'img/slider3.jpg' %}" alt="" width="1300" height="300"></li>
+    <li><img src="{% static 'img/sliders/1.jpg' %}" alt="" width="1300" height="300"></li>
+    <li><img src="{% static 'img/sliders/2.jpg' %}" alt="" width="1300" height="300"></li>
+    <li><img src="{% static 'img/sliders/3.jpg' %}" alt="" width="1300" height="300"></li>
   </ul>
   <button id="next" class="carousel-control-next" style="margin-right: 55px"><span class="carousel-control-next-icon"></span></button>
-  <button id="prev" class="carousel-control-prev" style="margin-left: 65px"><span class="carousel-control-prev-icon"></span></button>
+  <button id="prev" class="carousel-control-prev" style="margin-left: 15px"><span class="carousel-control-prev-icon"></span></button>
 <br>
 </div>
-
-<div class="container1">
-  <h2><b>Новинки</b></h2>
-  <div class="row row-cols-1 row-cols-md-5 g-5">
+  <div class="container2">
+    <h2><b>Новинки</b></h2>
+    <div class="container1">
+    <div class="row row-cols-1 row-cols-md-5 g-5">
     {% for books in object_list %}
    <div class="col">
-    <div class="card" style="height: 450px; width: 235px">
+    <div class="card" style="height: 500px; width: 235px">
       <div class="card-body">
         <img src="{{books.photo.url}}" class="card-img-top" height="280" width="200" alt="...">
         <h5 class="card-title">{{books.title}}</h5>
@@ -32,7 +32,7 @@
               <h4><b>{{books.price}} ₽</b></h4>
             </div>
             <div class="col">
-              <button style="margin-left: 35px">Купить</button>
+              <button style="margin-left: 35px;color: white;">Купить</button>
             </div>
           </div>
         </div>
@@ -42,8 +42,88 @@
   </div>
     {% endfor %}
   </div>
+  </div>
   <br>
-</div>
+  </div>
+
+  <div class="container1">
+    <div class="row row-cols-2">
+      <div class="col">
+      <h2><b>Подборки книг</b></h2>
+      </div>
+      <div class="col">
+        <a href="#" style="float: right;"><h5>Смотреть все →</h5></a>
+      </div>
+    </div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="{% static 'img/compilations/1.jpg' %}"  class="card-img" alt="...">
+      <div class="card-body">
+        <a class="card-title" href="#"><h5>Художественные книги о врачах</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static 'img/compilations/2.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a class="card-title" href="#"><h5>Гарри Поттер</h5></a>
+      </div>
+    </div>
+  </div>
+        <div class="col">
+    <div class="card">
+      <img src="{% static 'img/compilations/3.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a class="card-title" href="#"><h5>Ясная поляна - 2021</h5></a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="{% static 'img/compilations/4.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <a class="card-title" href="#"><h5>Жуткие романы в жанре хоррор</h5></a>
+      </div>
+    </div>
+  </div>
+      </div>
+  </div>
+  <br>
+
+  <div class="container1">
+    <div class="row row-cols-2">
+      <div class="col">
+        <h2><b>Акции</b></h2>
+      </div>
+      <div class="col">
+        <a href="#" style="float: right;"><h5>Смотреть все →</h5></a>
+      </div>
+    </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+      <div class="card bg-dark text-white">
+      <img src="{% static 'img/promo/2.jpg' %}"  class="card-img" alt="...">
+      </div>
+  </div>
+  <div class="col">
+    <div class="card bg-dark text-white">
+      <img src="{% static 'img/promo/1.jpg' %}" class="card-img" alt="...">
+    </div>
+  </div>
+  <div class="col">
+    <div class="card bg-dark text-white">
+      <img src="{% static 'img/promo/3.jpg' %}" class="card-img" alt="...">
+
+    </div>
+  </div>
+  </div>
+
+
+  </div>
+  <br>
+
 
 
 {% endblock %}

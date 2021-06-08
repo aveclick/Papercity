@@ -3,7 +3,11 @@ body
 {
   font-family: Alegreya Sans SC;
 }
-
+.registration
+{
+    font-size: 20px;
+    padding: 5px;
+}
 header
 {
   background-color: black;
@@ -202,27 +206,33 @@ input[type="search"]
 
 .container2
 {
-    margin: 0 auto 50px;
-    min-height: 100%;
-    width: 100%;
-    background: midnightblue;
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  background: midnightblue;
 }
 
 .container2 h2
 {
-    color: white;
-    margin-left: 7%;
-    padding: 10px;
+  color: white;
+  margin-left: 7%;
+  padding: 10px;
+}
+
+.container3
+{
+    max-width: 285px;
+    margin: 100px 600px;
 }
 
 .carousel-control-prev-icon
 {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
 
 .carousel-control-next-icon
 {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23B0B0B0' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
 .card_footer
@@ -251,7 +261,7 @@ ul ul
 
 #wrapper
 {
-    width: 220px;
+    width: 310px;
     font-size: 0.8125em;
 }
 
@@ -295,8 +305,8 @@ button
     position: fixed;
     top: 0;
     height: 100%;
-    width: 500px;
-    margin-left: -500px;
+    width: 550px;
+    margin-left: -550px;
     font-size: 18px;
     overflow: auto;
     transition: .25s;
@@ -308,7 +318,7 @@ button
 }
 
    .menu-sidebar ul {
-    width: 270px; /* Ширина меню */
+    width: 350px; /* Ширина меню */
     list-style: none; /* Для списка убираем маркеры */
     margin: 10px 0 0 10px; /* Нет отступов вокруг */
     padding: 0; /* Убираем поля вокруг текста */
@@ -331,7 +341,6 @@ button
    .menu-sidebar li a{
      color: white;
    }
-
 .card-title h5
 {
     color: black;
@@ -351,4 +360,9 @@ button
 .col a:hover
 {
    color: darkorange;
+}
+
+.col h2, .col a
+{
+    margin-top: 30px;
 }

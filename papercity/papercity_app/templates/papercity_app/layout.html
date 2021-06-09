@@ -190,20 +190,17 @@ $(document).ready(function () {
             <li><a href="/home"><img src="{% static 'img/logo.jpg' %}" alt="" width="240" height="100"></a></li>
             <li><a href="/books" class="down" style="text-decoration: none">Книги</a>
                 <ul class="submenu">
-                    <li><a href="" style="text-decoration: none">Все книги</a></li>
-                    <li><a href="" style="text-decoration: none">Художественная литература</a></li>
-                    <li><a href="" style="text-decoration: none">Литература для детей</a></li>
-                    <li><a href="" style="text-decoration: none">Учебная литература</a></li>
-                    <li><a href="" style="text-decoration: none">Научная литература</a></li>
-                    <li><a href="" style="text-decoration: none">Комиксы</a></li>
+                    <li><a href="/books" style="text-decoration: none">Все книги</a></li>
+                    <li><a href="/cat9" style="text-decoration: none">История. Политика</a></li>
+                    <li><a href="/cat2" style="text-decoration: none">Литература для детей</a></li>
+                    <li><a href="/cat3" style="text-decoration: none">Учебная литература</a></li>
+                    <li><a href="/cat4" style="text-decoration: none">Иностранные языки</a></li>
+                    <li><a href="/cat5" style="text-decoration: none">Искусство</a></li>
                 </ul>
             </li>
             <li><a href="" class="down" style="text-decoration: none">Канцелярия</a>
                 <ul class="submenu">
                     <li><a href="" style="text-decoration: none">Все канцтовары</a></li>
-                    <li><a href="" style="text-decoration: none">Обложки для документов</a></li>
-                    <li><a href="" style="text-decoration: none">Офисная канцелярия</a></li>
-                    <li><a href="" style="text-decoration: none">Письменные принадлежности</a></li>
                 </ul>
             </li>
             {% if user.is_authenticated %}
@@ -232,12 +229,12 @@ $(document).ready(function () {
         <div class="row row-cols-3">
             <div class="col">
                 <h4>Книги</h4>
-                <a href="#">Все книги</a>
-                <a href="#">Художественная литература</a>
-                <a href="#">Литература для детей</a>
-                <a href="#">Учебная литература</a>
-                <a href="#">Научная литература</a>
-                <a href="#">Комиксы</a>
+                <a href="/books">Все книги</a>
+                <a href="/cat9">История. Политика</a>
+                <a href="/cat2">Литература для детей</a>
+                <a href="/cat3">Учебная литература</a>
+                <a href="/cat4">Иностранные языки</a>
+                <a href="/cat5">Искусство</a>
             </div>
             <div class="col">
                 <h4>Мой Бумажный город</h4>

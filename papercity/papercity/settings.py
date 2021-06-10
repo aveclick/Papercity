@@ -79,6 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'customers': {
+        'NAME': 'customer_data',
+        'ENGINE': 'django.db.backends.sqlite3',
     }
 }
 

@@ -173,6 +173,10 @@ input[type="search"]
   padding: 20px;
 }
 
+#space {
+    height: 100px;
+}
+
 #slider
 {
   margin-top: 50px;
@@ -341,6 +345,8 @@ button
    .menu-sidebar li a{
      color: white;
    }
+
+/* Цвет title книг, подсветка при наведении, отступы */
 .card-title h5
 {
     color: black;
@@ -366,3 +372,65 @@ button
 {
     margin-top: 30px;
 }
+
+/* Разделение меню и книг в разделе "Все книги" */
+#menu {
+    margin: 0 0 0 120px;
+    float:left;
+}
+
+#content {
+    margin-bottom: 50px;
+}
+
+
+/* Контейнер на страницах книг */
+.book_container {
+    width: 930px;
+    margin-left: 490px;
+    height: 1200px;
+    font-size: 18px;
+    vertical-align: top
+
+}
+
+/* Форма отзывов на страницах книг */
+.form label{
+ width: 180px;
+ float: left;
+ color: #999;
+}
+
+.form input{
+ width: 400px;
+}
+
+.form textarea{
+ width: 400px;
+ max-width: 400px;
+ min-width: 400px;
+ line-height: 150%;
+}
+
+.form input{
+ width: 400px;
+}
+
+.form textarea{
+ width: 400px;
+}
+
+.formTextRed{
+ color: red;
+}
+
+.form input, .form textarea, .form select{
+ padding: 9px;
+ border: 1px solid #E5E5E5;
+ border-radius: 5px;
+ box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+ -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+ -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+ background: #FFF left top repeat-x;
+}
+

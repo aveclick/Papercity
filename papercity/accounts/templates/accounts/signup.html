@@ -1,0 +1,53 @@
+{% extends 'papercity_app/layout.html' %}
+ 
+{% block content %}
+ <div class="container3">
+        <div class="card border-success mb-3" style="min-width: 20rem;">
+            <div class="card-body">
+<h2 align="center">Регистрация</h2>
+                <div class="registration">
+<form method="post">
+  {% csrf_token %}
+  						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<label>Логин</label>
+							</div>
+							{{form.username}}
+						</div>
+        						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<label>Имя</label>
+							</div>
+							{{form.first_name}}
+						</div>
+        						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<label>Фамилия</label>
+							</div>
+							{{form.last_name}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<label>E-mail</label>
+							</div>
+							{{form.email}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<label>Пароль</label>
+							</div>
+							{{form.password1}}
+						</div>
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<label>Повторите пароль</label>
+							</div>
+							{{form.password2}}
+						</div>
+  <button type="submit" style='margin-left:25%; color: white;'>Регистрация</button>
+</form>
+                    </div>
+            </div>
+        </div>
+ </div>
+{% endblock content %}

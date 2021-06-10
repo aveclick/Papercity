@@ -1,8 +1,43 @@
-{% extends 'papercity_app/layout.html' %}
-{% block content %}
- {% if user.is_authenticated %}
-        <p>Hi {{ user.username }}!</p>
-{% else %}
-        <p>You are not logged in.</p>
-      {% endif %}
-{% endblock %}
+{% extends 'papercity_app/layout.html' %}&nbsp;{% block content %}
+<br>
+<div class="container1">
+<div class="tabs">
+    <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+    <label for="tab-btn-1">Заказы</label>
+    <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+    <label for="tab-btn-2">Избранные</label>
+    <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+    <label for="tab-btn-3">Настройки</label>
+
+    <div id="content-1">
+      Содержимое 1...
+    </div>
+    <div id="content-2">
+      Содержимое 2...
+    </div>
+    <div id="content-3">
+        <form>
+              <div class="form-group">
+    <label for="validationTooltipUsername">Логин</label>
+    <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" value="{{ user.username }}" aria-describedby="validationTooltipUsernamePrepend" required>
+  </div>
+              <div class="form-group">
+                  <label for="validationTooltip01">Имя</label>
+    <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="{{ user.first_name }}" required>
+  </div>
+              <div class="form-group">
+    <label for="validationTooltip02">Фамилия</label>
+    <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" value="{{ user.last_name }}" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">E-mail</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{ user.email }}">
+  </div>
+            <p></p>
+            <button type="submit" style='margin-left:25%; color: white; margin: auto;'>Сохранить</button>
+        </form>
+    </div>
+</div>
+</div>
+    <br>
+{% endblock content %}

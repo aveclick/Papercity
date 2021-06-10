@@ -1,14 +1,26 @@
-from django.http import request
-from django.shortcuts import render
-
-
-def home(request):
-    return render(request, 'papercity_app/home.html')
+from django.shortcuts import render, redirect
+from django.views.generic import DetailView
+from django.views.generic.base import View
+from .models import Books
+from .forms import ReviewForm
 
 
 def books(request):
     return render(request, 'papercity_app/books.html')
 
+class BookDetailView(DetailView):
+    def get(self, request, slug):
+        book = Books.objects.get(url=slug)
+        return render(request, "papercity_app/book.html", {"book": book})
+
+class AddReview(View):
+    def post(self, request, pk):
+        form = ReviewForm(request.POST)
+        if form.is_valid:
+            form = form.save(commit=False)
+            form.book_id = pk
+            form.save()
+        return redirect("/")
 
 def cat1(request):
     return render(request, 'papercity_app/cat1.html')

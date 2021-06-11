@@ -1,13 +1,15 @@
 from django.urls import path, include
 from . import views
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from .models import Books
 
 urlpatterns = [
     path('', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5], template_name='papercity_app/home.html')),
     path('home', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5], template_name='papercity_app/home.html')),
-    path('books', ListView.as_view(queryset=Books.objects.all().order_by('-id'), template_name='papercity_app/books.html')),
+    path('books', views.BookView.as_view()),
+    path('<slug:slug>', views.BookDetailView.as_view(), name="book_detail"),
     path('review/<int:pk>', views.AddReview.as_view(), name="add_review"),
+
     path('cat1', views.cat1, name='cat1'),
     path('cat2', views.cat2, name='cat2'),
     path('cat3', views.cat3, name='cat3'),

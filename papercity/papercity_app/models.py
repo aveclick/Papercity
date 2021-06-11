@@ -1,6 +1,4 @@
 from django.db import models
-from django.urls import reverse
-
 
 class Category(models.Model):
     """Категории"""
@@ -25,7 +23,7 @@ class Author(models.Model):
         verbose_name = 'Автор'
         verbose_name_plural = 'Авторы'
 
-class Subcategory(models.Model):
+class Genre(models.Model):
     name = models.CharField(max_length=50)
     url = models.SlugField(max_length=160, unique=True)
 
@@ -33,15 +31,15 @@ class Subcategory(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Подкатегория'
-        verbose_name_plural = 'Подкатегории'
+        verbose_name = 'Жанр'
+        verbose_name_plural = 'Жанры'
 
 class Books(models.Model):
     """Книги"""
     id = models.IntegerField
     title = models.CharField('Название', max_length=50)
     author = models.ManyToManyField(Author, verbose_name='автор')
-    subcategory = models.ManyToManyField(Subcategory, verbose_name='подкатегория')
+    genre = models.ManyToManyField(Genre, verbose_name='жанр')
     description = models.TextField(max_length=3000)
     price = models.PositiveIntegerField('Стоимость', default=0)
     count = models.PositiveIntegerField('В наличии', default=1)
@@ -54,9 +52,6 @@ class Books(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        return reverse("book_detail", kwargs={"slug": self.url})
-
     class Meta:
         verbose_name = 'Книга'
         verbose_name_plural = 'Книги'
@@ -66,7 +61,8 @@ class Reviews(models.Model):
     email = models.EmailField
     name = models.CharField('Имя', max_length=100)
     text = models.TextField('Сообщение', max_length=5000)
-    data = models.DateTimeField(auto_now=True)
+    parent = models.ForeignKey(
+        'self', verbose_name='Родитель', on_delete=models.SET_NULL, blank=True, null=True)
     book = models.ForeignKey(Books, verbose_name='книга', on_delete=models.CASCADE)
 
     def __str__(self):

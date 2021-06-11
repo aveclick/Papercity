@@ -1,27 +1,15 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView
 from django.views.generic.base import View
-from .models import Books, Subcategory
+from .models import Books
 from .forms import ReviewForm
 
-class AllSubcategory:
-    """Все жанры"""
-    def get_genres(self):
-        return Subcategory.objects.all()
 
-class BookView(AllSubcategory, ListView):
-    """Список фильмов"""
-    model = Books
-    queryset = Books.objects.all().order_by('-id')
-    template_name = "papercity_app/books.html"
+def books(request):
+    return render(request, 'papercity_app/books.html')
 
-class BookDetailView(AllSubcategory, DetailView):
-    """Страница с книгой"""
-    model = Books
-    slug_field = "url"
 
 class AddReview(View):
-    """"""
     def post(self, request, pk):
         form = ReviewForm(request.POST)
         if form.is_valid:
@@ -29,13 +17,6 @@ class AddReview(View):
             form.book_id = pk
             form.save()
         return redirect("/")
-
-class FilterBooks(AllSubcategory, ListView):
-    """Фильтр книг"""
-    def get_queryset(self):
-        queryset = Books.objects.filter(genre__name=self.request.GET.getlist("genre"))
-        return queryset
-
 
 def cat1(request):
     return render(request, 'papercity_app/cat1.html')

@@ -34,12 +34,12 @@
     <div id="content">
         <h3>Все книги</h3>
     <div class="row row-cols-1 row-cols-md-4 g-4">
-        {% for books in book_list %}
+        {% for books in object_list %}
         <div class="col">
             <div class="card" style="height: 500px; width: 235px">
 
             <div class="card-body">
-                <a href="/{{ books.get_absolute_url }}"><img src="{{books.photo.url}}" class="card-img-top" height="280" width="200" alt="..."></a>
+                <a href="/{{ books.url }}"><img src="{{books.photo.url}}" class="card-img-top" height="280" width="200" alt="..."></a>
                 <a href="/{{ books.url }} " class="card-title"><h5>{{books.title}}</h5></a>
             <p class="card-text">
                 {% for author in books.author.all %}

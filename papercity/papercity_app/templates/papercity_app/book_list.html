@@ -34,22 +34,22 @@
     <div id="content">
         <h3>Все книги</h3>
     <div class="row row-cols-1 row-cols-md-4 g-4">
-         {% for books in book_list %}
+         {% for book in book_list %}
         <div class="col">
             <div class="card" style="height: 500px; width: 235px">
 
             <div class="card-body">
-                <a href="/{{ books.get_absolute_url }}"><img src="{{books.photo.url}}" class="card-img-top" height="280" width="200" alt="..."></a>
-                <a href="/{{ books.get_absolute_url }} " class="card-title"><h5>{{books.title}}</h5></a>
+                <a href="{{ book.get_absolute_url }}"><img src="{{book.photo.url}}" class="card-img-top" height="280" width="200" alt="..."></a>
+                <a href="{{ book.get_absolute_url }}" class="card-title"><h5>{{book.title}}</h5></a>
             <p class="card-text">
-                {% for author in books.author.all %}
+                {% for author in book.author.all %}
                 {{author.name}}
                 {% endfor %}
             </p>
             <div class="card_footer">
                 <div class="row row-cols-2">
                     <div class="col">
-                        <h4><b>{{books.price}} ₽</b></h4>
+                        <h4><b>{{book.price}} ₽</b></h4>
                     </div>
                     <div class="col">
                         <button style="margin-left: 35px;color: white;">Купить</button>

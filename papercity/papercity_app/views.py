@@ -1,13 +1,20 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.views.generic.base import View
 from .models import Books
 from .forms import ReviewForm
 
 
-def books(request):
-    return render(request, 'papercity_app/books.html')
+class BookView(ListView):
+    """Список фильмов"""
+    model = Books
+    queryset = Books.objects.all().order_by('-id')
+    template_name = "papercity_app/books.html"
 
+class BookDetailView(DetailView):
+    """Страница с книгой"""
+    model = Books
+    slug_field = "url"
 
 class AddReview(View):
     def post(self, request, pk):

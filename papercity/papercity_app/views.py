@@ -6,15 +6,16 @@ from .forms import ReviewForm
 
 
 class BookView(ListView):
-    """Список фильмов"""
-    model = Books
-    queryset = Books.objects.all().order_by('-id')
-    template_name = "papercity_app/books.html"
+    """Список книг"""
+    def get(self, request):
+        books = Books.objects.all()
+        return render(request, "papercity_app/book_list.html", {"book_list": books})
 
 class BookDetailView(DetailView):
     """Страница с книгой"""
-    model = Books
-    slug_field = "url"
+    def get(self, request, slug):
+        book = Books.objects.get(url=slug)
+        return render(request, "papercity_app/book_detail.html", {"book": book})
 
 class AddReview(View):
     def post(self, request, pk):

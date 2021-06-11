@@ -5,8 +5,9 @@ from .models import Books
 
 urlpatterns = [
     path('', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5], template_name='papercity_app/home.html')),
-    path('home', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5], template_name='papercity_app/home.html')),
-    path('books', views.BookView.as_view()),
+    path('home', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5],
+                                  template_name='papercity_app/home.html')),
+    path('book_list', views.BookView.as_view()),
     path('<slug:slug>', views.BookDetailView.as_view(), name="book_detail"),
     path('review/<int:pk>', views.AddReview.as_view(), name="add_review"),
     path('books', views.BookView.as_view()),

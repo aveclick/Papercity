@@ -8,6 +8,10 @@ body
     font-size: 20px;
     padding: 5px;
 }
+.registration1
+{
+    font-size: 18px;
+}
 header
 {
   background-color: black;
@@ -299,9 +303,9 @@ button
     margin: 5px auto auto auto;
     background: darkorange;
     padding: 3px 7px;
-    color: darkorange;
     border-radius: 5px;
     border: 1px solid orangered;
+    color: white;
 }
 
 .menu-wrap {
@@ -487,3 +491,4 @@ button
       border-bottom: 1px solid black;
     color: white;
     }
+

@@ -7,7 +7,6 @@ urlpatterns = [
     path('', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5], template_name='papercity_app/home.html')),
     path('home', ListView.as_view(queryset=Books.objects.all().order_by('-id')[:5], template_name='papercity_app/home.html')),
     path('books', ListView.as_view(queryset=Books.objects.all().order_by('-id'), template_name='papercity_app/books.html')),
-    path('<slug:slug>', views.BookDetailView.as_view(), name="book_detail"),
     path('review/<int:pk>', views.AddReview.as_view(), name="add_review"),
     path('cat1', views.cat1, name='cat1'),
     path('cat2', views.cat2, name='cat2'),

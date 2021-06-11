@@ -8,10 +8,6 @@ from .forms import ReviewForm
 def books(request):
     return render(request, 'papercity_app/books.html')
 
-class BookDetailView(DetailView):
-    def get(self, request, slug):
-        book = Books.objects.get(url=slug)
-        return render(request, "papercity_app/book.html", {"book": book})
 
 class AddReview(View):
     def post(self, request, pk):

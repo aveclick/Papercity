@@ -191,11 +191,9 @@ $(document).ready(function () {
             <li><a href="/book_list" class="down" style="text-decoration: none">Книги</a>
                 <ul class="submenu">
                     <li><a href="/book_list" style="text-decoration: none">Все книги</a></li>
-                    <li><a href="/cat9" style="text-decoration: none">История. Политика</a></li>
-                    <li><a href="/cat2" style="text-decoration: none">Литература для детей</a></li>
-                    <li><a href="/cat3" style="text-decoration: none">Учебная литература</a></li>
-                    <li><a href="/cat4" style="text-decoration: none">Иностранные языки</a></li>
-                    <li><a href="/cat5" style="text-decoration: none">Искусство</a></li>
+                    {% for category in category_menu %}
+                    <li><a href="/{{ category.url }}/">{{ category.name }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
             <li><a href="" class="down" style="text-decoration: none">Канцелярия</a>
@@ -231,11 +229,9 @@ $(document).ready(function () {
             <div class="col">
                 <h4>Книги</h4>
                 <a href="/book_list">Все книги</a>
-                <a href="/cat9">История. Политика</a>
-                <a href="/cat2">Литература для детей</a>
-                <a href="/cat3">Учебная литература</a>
-                <a href="/cat4">Иностранные языки</a>
-                <a href="/cat5">Искусство</a>
+                {% for category in category_menu %}
+                    <a href="/{{ category.url }}/">{{ category.name }}</a>
+                    {% endfor %}
             </div>
             <div class="col">
                 <h4>Мой Бумажный город</h4>

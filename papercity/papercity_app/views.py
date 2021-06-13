@@ -1,21 +1,39 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 from django.views.generic.base import View
-from .models import Books
+from .models import Books, Genre, Category
 from .forms import ReviewForm
+from django.views.generic.base import View
+from django.views.generic import ListView, DetailView
 
 
-class BookView(ListView):
+class CategoryGenres:
+    """Все категории и жанры(подкатегории)"""
+
+    def get_genres(self):
+        return Genre.objects.all()
+
+
+class BookView(CategoryGenres, ListView):
     """Список книг"""
     def get(self, request):
-        books = Books.objects.all()
-        return render(request, "papercity_app/book_list.html", {"book_list": books})
+        books = Books.objects.all().order_by('-id')
+        category_menu = Category.objects.all()
+        return render(request, "papercity_app/book_list.html", {"book_list": books, "category_menu": category_menu})
 
-class BookDetailView(DetailView):
+    def category_list(request, url):
+        books = Books.objects.filter(category__url=url)
+        category_menu = Category.objects.all()
+        return render(request, "papercity_app/book_list.html", {"book_list": books, "category_menu": category_menu})
+
+
+class BookDetailView(CategoryGenres, DetailView):
     """Страница с книгой"""
+
     def get(self, request, slug):
         book = Books.objects.get(url=slug)
         return render(request, "papercity_app/book_detail.html", {"book": book})
+
 
 class AddReview(View):
     def post(self, request, pk):
@@ -25,6 +43,7 @@ class AddReview(View):
             form.book_id = pk
             form.save()
         return redirect("/")
+
 
 def cat1(request):
     return render(request, 'papercity_app/cat1.html')

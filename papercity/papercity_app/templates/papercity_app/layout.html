@@ -88,98 +88,10 @@ $(document).ready(function () {
         <h3 style="color: white; margin: 10px 0 0 10px">Каталог</h3>
         <hr style="color: white;">
         <ul class="menu1">
-            <li><a href="/cat1" style="color:white;">Художественная литература</a>
-                <ul>
-                    <div class="ul1">
-                    <li><a href="/minicat1">Поэзия</a></li>
-                    <li><a href="/minicat2">Проза</a></li>
-                    <li><a href="/minicat3">Фантастика</a></li>
-                    <li><a href="/minicat4">Фэнтези</a></li>
-                    <li><a href="/minicat5">Детективы</a></li>
-                    <li><a href="/minicat6">Приключения</a></li>
-                    <li><a href="/minicat7">Биографии</a></li>
-                    <li><a href="/minicat8">Романы</a></li>
-                    <li><a href="/minicat9">Драматургия</a></li>
-                    <li><a href="/minicat10">Графические романы и манга</a></li>
-                    </div>
-                </ul>
-            </li>
+            {% for category in category_menu %}
+            <li><a href="/{{ category.url }}/" style="color:white;">{{ category.name }}</a></li>
             <br>
-            <li><a href="/cat2" style="color:white;">Литература для детей</a>
-                <ul>
-                    <li><a href="/minicat11">Художественная литература</a></li>
-                    <li><a href="/minicat12">Дошкольное обучение</a></li>
-                    <li><a href="/minicat13">Детская научно-популярная литература</a></li>
-                    <li><a href="/minicat14">Творчество и досуг</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat3" style="color:white;">Учебная литература</a>
-                <ul>
-                    <li><a href="/minicat15">Педагогика</a></li>
-                    <li><a href="/minicat16">Словари и разговорники</a></li>
-                    <li><a href="/minicat17">Гуманитарные дисциплины</a></li>
-                    <li><a href="/minicat18">Общественные дисциплины</a></li>
-                    <li><a href="/minicat19">Естественнонаучные дисциплины</a></li>
-                    <li><a href="/minicat20">Прикладные дисциплины</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat4" style="color:white;">Иностранные языки</a>
-                <ul>
-                    <li><a href="/minicat21">Литаратура на английском языке</a></li>
-                    <li><a href="/minicat22">Литаратура на немецком языке</a></li>
-                    <li><a href="/minicat23">Литаратура на испанском языке</a></li>
-                    <li><a href="/minicat24">Литаратура на других языках</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat5" style="color:white;">Искусство</a>
-                <ul>
-                    <li><a href="/minicat25">Искусствоведение</a></li>
-                    <li><a href="/minicat26">Архитектура и дизайн</a></li>
-                    <li><a href="/minicat27">Живопись и графика</a></li>
-                    <li><a href="/minicat28">Декоративно-прикладное искусство</a></li>
-                    <li><a href="/minicat29">Фотография</a></li>
-                    <li><a href="/minicat30">Музыка</a></li>
-                    <li><a href="/minicat31">Мода</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat6" style="color:white;">Психология и эзотерика</a>
-                <ul>
-                    <li><a href="/minicat32">Психология</a></li>
-                    <li><a href="/minicat33">Эзотерика</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat7" style="color:white;">Медицина, здоровье, дети</a>
-                <ul>
-                    <li><a href="/minicat34">Нетрадиционная медицина</a></li>
-                    <li><a href="/minicat35">Медицина и фармакология</a></li>
-                    <li><a href="/minicat36">Для родителей</a></li>
-                    <li><a href="/minicat37">Красота и здоровье</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat8" style="color:white;">Научная литература</a>
-                <ul>
-                    <li><a href="/minicat38">Технические науки</a></li>
-                    <li><a href="/minicat39">Естественные науки</a></li>
-                    <li><a href="/minicat40">Гуманитарные науки</a></li>
-                    <li><a href="/minicat41">Философия</a></li>
-                </ul>
-            </li>
-            <br>
-            <li><a href="/cat9" style="color:white;">История. Политика</a>
-                <ul>
-                    <li><a href="/minicat42">История</a></li>
-                    <li><a href="/minicat43">Политика</a></li>
-                    <li><a href="/minicat44">Социология</a></li>
-                    <li><a href="/minicat45">Военное дело</a></li>
-                </ul>
-            </li>
-            <br>
+            {% endfor %}
         </ul>
     </div>
 </div>

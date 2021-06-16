@@ -6,6 +6,7 @@ from django.views.generic.base import View
 from django.views.generic import ListView, DetailView
 
 
+
 class Search(ListView):
     model = Books
     template_name = 'papercity_app/search.html'
@@ -16,14 +17,15 @@ class Search(ListView):
         object_list = Books.objects.filter(Q(title__icontains=a) | Q(author__name__icontains=a))
         return object_list
 
-
 class BookView(ListView):
     """Список книг"""
 
-    def get(self, request):
-        books = Books.objects.all().order_by('-id')
-        category_menu = Category.objects.all()
-        return render(request, "papercity_app/book_list.html", {"book_list": books, "category_menu": category_menu})
+    model = Books
+    template_name = "papercity_app/book_list.html"
+    context_object_name = "book_list"
+
+    def get_queryset(self):
+        return Books.objects.order_by('-id')
 
     def category_list(request, url):
         books = Books.objects.filter(category__url=url)
@@ -34,19 +36,29 @@ class BookView(ListView):
 class BookDetailView(DetailView):
     """Страница с книгой"""
 
-    def get(self, request, slug):
-        book = Books.objects.get(url=slug)
-        return render(request, "papercity_app/book_detail.html", {"book": book})
+    model = Books
+    template_name = "papercity_app/book_detail.html"
+    slug_field = "url"
+    context_object_name = "book"
+
+
+class CategoryList(ListView):
+
+    model = Category
+    queryset = Category.objects.all()
+    context_object_name = "categories"
+    template_name = "papercity_app/book_list.html"
 
 
 class AddReview(View):
     def post(self, request, pk):
         form = ReviewForm(request.POST)
+        book = Books.objects.get(id=pk)
         if form.is_valid:
             form = form.save(commit=False)
             form.book_id = pk
             form.save()
-        return redirect("/")
+        return redirect(book.get_absolute_url())
 
 def home(request):
     return render(request, 'papercity_app/home.html')

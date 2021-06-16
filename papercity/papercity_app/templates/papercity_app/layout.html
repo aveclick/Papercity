@@ -80,6 +80,7 @@ $(document).ready(function () {
 });
 </script>
 <body>
+{% load booktags %}
 <div class="menu-wrap">
     <div class="menu-sidebar">
                         <span class="toggle-button">
@@ -88,10 +89,9 @@ $(document).ready(function () {
         <h3 style="color: white; margin: 10px 0 0 10px">Каталог</h3>
         <hr style="color: white;">
         <ul class="menu1">
-            {% for category in category_menu %}
-            <li><a href="/{{ category.url }}/" style="color:white;">{{ category.name }}</a></li>
-            <br>
-            {% endfor %}
+
+            {% get_categories %}
+
         </ul>
     </div>
 </div>
@@ -103,9 +103,7 @@ $(document).ready(function () {
             <li><a href="/book_list" class="down" style="text-decoration: none">Книги</a>
                 <ul class="submenu">
                     <li><a href="/book_list" style="text-decoration: none">Все книги</a></li>
-                    {% for category in category_menu %}
-                    <li><a href="/{{ category.url }}/">{{ category.name }}</a></li>
-                    {% endfor %}
+                    {% get_categories %}
                 </ul>
             </li>
             {% if user.is_authenticated %}
@@ -135,9 +133,10 @@ $(document).ready(function () {
             <div class="col">
                 <h4>Книги</h4>
                 <a href="/book_list">Все книги</a>
-                {% for category in category_menu %}
-                    <a href="/{{ category.url }}/">{{ category.name }}</a>
-                    {% endfor %}
+                <ul class="menu1">
+                {% load booktags %}
+                {% get_categories %}
+                </ul>
             </div>
             <div class="col">
                 <h4>Мой Бумажный город</h4>

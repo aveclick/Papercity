@@ -7,7 +7,7 @@
                 style="margin-left: 150px; float: left"></p>
         <div class="book_container">
                 <h5 style="font-size: 15px;"><a href="/home" style="text-decoration: none;">Главная</a><a href="/book_list" style="text-decoration: none;">
-                    > Книги</a><a href="/{{ book.category.url }}/" style="text-decoration: none;">
+                    > Книги</a><a href="{{ book.category.url }}/" style="text-decoration: none;">
                     > {{ book.category.name}}</a></h5>
         <h1><b>{{book.title}}</b></h1>
         <h5>{% for author in book.author.all %}
@@ -32,11 +32,11 @@
         <form  action="{% url 'add_review' book.id %}" method="post"  class="form" id="formReview">
          {% csrf_token %}
         <p>
-            <label for="firstname"><span class="formTextRed">*</span> Имя:</label>
+            <label><span class="formTextRed">*</span> Имя:</label>
             <input type="text" name="name" id="name" />
         </p>
         <p>
-            <label for="comment"><span class="formTextRed">*</span> Отзыв:</label>
+            <label><span class="formTextRed">*</span> Отзыв:</label>
             <textarea rows="10" name="text" id="text"></textarea>
         </p>
         <button style="color: white; width: 400px; margin-left: 180px">Отправить</button>

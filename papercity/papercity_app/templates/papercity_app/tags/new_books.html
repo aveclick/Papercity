@@ -1,0 +1,34 @@
+<div class="container2">
+    <h2><b>Новинки</b></h2>
+    <div class="container1">
+    <div class="row row-cols-1 row-cols-md-5 g-5">
+    {% for books in new_books %}
+   <div class="col">
+    <div class="card" style="height: 500px; width: 235px">
+      <div class="card-body">
+        <a href="{{ books.get_absolute_url }}"><img src="{{books.photo.url}}" class="card-img-top" height="300" width="200" alt="..."></a>
+          <a href="/{{ books.url }} " class="card-title"><h5>{{books.title}}</h5></a>
+        <p class="card-text">
+          {% for author in books.author.all %}
+          {{author.name}}
+          {% endfor %}
+        </p>
+        <div class="card_footer">
+          <div class="row row-cols-2">
+            <div class="col">
+              <h4><b>{{books.price}} ₽</b></h4>
+            </div>
+            <div class="col">
+              <button style="margin-left: 35px;color: white;">Купить</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+    {% endfor %}
+  </div>
+  </div>
+  <br>
+  </div>

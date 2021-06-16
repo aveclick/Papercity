@@ -1,0 +1,54 @@
+{% extends 'papercity_app/layout.html' %}
+{% block content %}
+<div class="container1">
+    <div class="hover">
+    <br>
+    <h5 style="font-size: 15px;"><a href="/home" style="text-decoration: none;">Главная</a><a href="/stocks" style="text-decoration: none;"> > Акции</a></h5>
+    <h2><b>Акции</b></h2>
+    <p></p>
+    {% load static %}
+    <div class="card mb-3" style="max-width: 1090px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/promo/2.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="margin-left: 300px; width: 690px; font-size: 30px">Детективные новинки</h5>
+        <p class="card-text" style="margin-left: 300px; width: 690px; font-size: 22px">Скидка 20% на подборку детективов, которые вышли в этом году</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 1090px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/promo/1.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="margin-left: 300px; width: 690px; font-size: 30px">Вселенная Стивена Кинга</h5>
+        <p class="card-text" style="margin-left: 300px; width: 690px; font-size: 22px">Скидка 15% на все произведения Короля ужасов</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="card mb-3" style="max-width: 1090px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/promo/3.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="margin-left: 300px; width: 690px; font-size: 30px">Любимая классика</h5>
+        <p class="card-text" style="margin-left: 300px; width: 690px; font-size: 22px">Скидка 10% на всю зарубежную классику</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+</div>
+{% endblock %}

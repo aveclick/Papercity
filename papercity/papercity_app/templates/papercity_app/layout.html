@@ -99,18 +99,13 @@ $(document).ready(function () {
     <nav>
         <ul class="topmenu">з
             {% load static %}
-            <li><a href="/home"><img src="{% static 'img/logo.jpg' %}" alt="" width="240" height="100"></a></li>
+            <li><a href="/home"><img src="{% static 'img/logo.jpg' %}" alt="" width="260" height="100"></a></li>
             <li><a href="/book_list" class="down" style="text-decoration: none">Книги</a>
                 <ul class="submenu">
                     <li><a href="/book_list" style="text-decoration: none">Все книги</a></li>
                     {% for category in category_menu %}
                     <li><a href="/{{ category.url }}/">{{ category.name }}</a></li>
                     {% endfor %}
-                </ul>
-            </li>
-            <li><a href="" class="down" style="text-decoration: none">Канцелярия</a>
-                <ul class="submenu">
-                    <li><a href="" style="text-decoration: none">Все канцтовары</a></li>
                 </ul>
             </li>
             {% if user.is_authenticated %}
@@ -134,7 +129,6 @@ $(document).ready(function () {
 </header>
 {% block content%}
 {% endblock %}
-<div id="space"></div>
 <div id="footer">
     <div class="container">
         <div class="row row-cols-3">

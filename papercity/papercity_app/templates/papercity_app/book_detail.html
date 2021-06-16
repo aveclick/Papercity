@@ -2,11 +2,11 @@
 {% block content %}
 
     <br>
-
         {% load static %}
         <p><img src="{{book.photo.url}}" alt="" width="300" height="490" vspace="5" hspace="20"
                 style="margin-left: 150px; float: left"></p>
         <div class="book_container">
+                <h5 style="font-size: 15px;"><a href="/home" style="text-decoration: none;">Главная</a><a href="/book_list" style="text-decoration: none;"> > Книги</a><a href="/{{ book.category.url }}/" style="text-decoration: none;"> > {{ book.category.name}}</a></h5>
         <h1><b>{{book.title}}</b></h1>
         <h5>{% for author in book.author.all %}
           {{author.name}}

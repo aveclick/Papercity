@@ -12,3 +12,8 @@ def get_first_books():
 def get_second_books():
     books = Books.objects.order_by("-id")[:5]
     return {"second_books": books}
+
+@register.inclusion_tag("papercity_app/tags/new_books.html")
+def get_new_books():
+    books = Books.objects.order_by("-id")[:5]
+    return {"new_books": books}

@@ -47,7 +47,7 @@ nav a
 .topmenu > li > a
 {
   position: relative;
-  padding: 0 40px;
+  padding: 0 60px;
   font-family: Alegreya Sans SC;
   font-size: 28px;
   line-height: 1;
@@ -83,7 +83,7 @@ nav a
   z-index: 4;
   left: 50%;
   top: 100%;
-  width: 185px;
+  width: 280px;
   padding: 15px 0 15px;
   margin-top: 5px;
   background: white;
@@ -231,6 +231,45 @@ input[type="search"]
 {
     max-width: 285px;
     margin: 100px 600px;
+}
+
+.container4
+{
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  background: #E6E6FA;
+}
+
+.container6
+{
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  background: #FFF0F5;
+}
+
+.container7
+{
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  background: #ADD8E6;
+}
+
+.container8
+{
+  margin: 0 auto;
+  min-height: 100%;
+  width: 100%;
+  background: #B0C4DE;
+}
+
+.container5
+{
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100%;
 }
 
 .carousel-control-prev-icon
@@ -393,7 +432,6 @@ button
 .book_container {
     width: 930px;
     margin-left: 490px;
-    height: 1200px;
     font-size: 18px;
     vertical-align: top
 
@@ -492,3 +530,15 @@ button
     color: white;
     }
 
+.fig
+{
+    text-align: center; /* Выравнивание по центру */
+}
+
+.hover a:hover{
+    text-decoration: underline blue;
+}
+
+.hover .card {
+    background-color: #F0F8FF;
+}

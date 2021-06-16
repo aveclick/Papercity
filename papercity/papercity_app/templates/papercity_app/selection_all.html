@@ -1,0 +1,64 @@
+{% extends 'papercity_app/layout.html' %}
+{% block content %}
+<div class="container1">
+  <div class="hover">
+    <br>
+    <h5 style="font-size: 15px;"><a href="/home" style="text-decoration: none;">Главная</a><a href="/selection_all" style="text-decoration: none;"> > Подборки книг</a></h5>
+    <h2><b>Подборки книг</b></h2>
+  <p></p>
+    {% load static %}
+    <div class="card mb-3" style="max-width: 1300px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/compilations/1.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="/selection1" style="color: black;"><h5 class="card-title" style="margin-left: 300px; width: 800px; font-size: 30px">Художественные книги о врачах</h5></a>
+        <p  class="card-text" style="margin-left: 300px; width: 800px; font-size: 22px">Профессия врача – неисчерпаемая тема для литературных шедевров. Cегодня мы хотим показать интересные художественные книги, в которых известные писатели обращаются к образам врачей: здесь собраны повести и романы о тех, кто не опускает руки даже перед самым страшным противником.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 1300px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/compilations/2.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="/selection2" style="color: black;"><h5 class="card-title" style="margin-left: 300px; width: 800px; font-size: 30px">Гарри Поттер</h5></a>
+        <p class="card-text" style="margin-left: 300px; width: 800px; font-size: 22px">Если вы знаете правила игры в Квиддич, состоите в Отряде Дамблдора и умеете варить сливочное пиво, то эта подборка точно для вас: здесь все книги о Гарри Поттере, коллекционные и подарочные издания, скетчбуки, блокноты и сувениры.</p>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="card mb-3" style="max-width: 1300px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/compilations/3.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="/selection3" style="color: black;"><h5 class="card-title" style="margin-left: 300px; width: 800px; font-size: 30px">Ясная поляна - 2021</h5></a>
+         <p class="card-text" style="margin-left: 300px; width: 800px; font-size: 22px">«Ясная Поляна» – это престижная литературная премия, которая отмечает выдающиеся произведения отечественной и зарубежной литературы. В длинный список 2021 года вошло 43 книги зарубежных авторов из 20 стран мира – это самый обширный список с момента начала вручения премии в этой номинации. </p>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="card mb-3" style="max-width: 1300px;">
+  <div class="row g-0" style="width: 450px; height: 250px;">
+    <div class="col-md-4">
+      <img src="{% static 'img/compilations/4.jpg' %}" alt="..." width="450px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <a href="/selection4" style="color: black;"><h5 class="card-title" style="margin-left: 300px; width: 800px; font-size: 30px">Жуткие романы в жанре хоррор</h5></a>
+        <p class="card-text" style="margin-left: 300px; width: 800px; font-size: 22px">Кто, если не Кинг?</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+</div>
+{% endblock %}

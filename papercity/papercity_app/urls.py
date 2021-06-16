@@ -6,6 +6,7 @@ from .models import Books
 urlpatterns = [
     path('', views.home, name=''),
     path('home', views.home, name='home'),
+    path("search/", views.Search.as_view(), name="search"),
     path('selection1', views.selection1, name='selection1'),
     path('selection2', views.selection2, name='selection2'),
     path('selection3', views.selection3, name='selection3'),

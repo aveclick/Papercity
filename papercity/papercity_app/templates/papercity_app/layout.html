@@ -125,7 +125,7 @@ $(document).ready(function () {
             {% else %}
             <li><a href="/accounts/login" class="down" style="text-decoration: none">Профиль</a></li>
             {% endif %}
-            <li><a href="" style="text-decoration: none">Корзина</a></li>
+            <li><a href="{% url 'cart' %}" style="text-decoration: none">Корзина</a></li>
               <div class="topnav-right">
             <li><form class="d-flex" action="{% url 'search' %}" method="get">
                 <input class="form-control me-2" name="q" type="search" placeholder="Найти книгу или товар" aria-label="Search">

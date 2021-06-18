@@ -181,6 +181,23 @@ input[type="search"]
     height: 100px;
 }
 
+#slider
+{
+  margin-top: 50px;
+  list-style: none;
+  position: relative;
+  width: 1300px;
+  height: 300px;
+}
+
+#slider img
+{
+  position: absolute;
+  max-width:1300px;
+  max-height:300px;
+}
+
+/* Используется в home.html, cart.html */
 .container
 {
   min-width: 1310px;

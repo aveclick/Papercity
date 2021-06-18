@@ -14,8 +14,14 @@
           {{author.name}}
           {% endfor %}</h5>
         <h4><b>{{book.price}} ₽</b></h4>
-        <button style="color: white; margin-top: 10px;">Купить</button>
+        <form action="{% url 'cart' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" value="{{ book.id }}" name="pid">
+            <input type="hidden" value="1" name="qty">
+            <button type="submit" style="color: white; margin-top: 10px;">Купить</button>
+        </form>
         <button style="color: white; margin-top: 10px;">Избранное</button>
+
 
         {% if book.count >= 10 %}
             <h5 style="color: green; margin: 10px;">! в наличии больше 10 штук</h5>

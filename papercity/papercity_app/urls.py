@@ -15,6 +15,7 @@ urlpatterns = [
     path('home/selections/selection4', views.selection4, name='selection4'),
     path('home/stocks', views.stocks, name='stocks'),
     path('home/selection_all', views.selection_all, name='selection_all'),
+    path('home/terms', views.terms, name='terms'),
 
 
 ]

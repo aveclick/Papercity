@@ -89,3 +89,7 @@ def stocks(request):
 
 def selection_all(request):
     return render(request, 'papercity_app/selection_all.html')
+
+
+def terms(request):
+    return render(request, 'papercity_app/terms.html')

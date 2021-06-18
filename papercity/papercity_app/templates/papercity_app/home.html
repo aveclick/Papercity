@@ -1,15 +1,43 @@
 {% extends 'papercity_app/layout.html' %}
 {% block content %}
+{% load static %}
 <div class="container">
-  <ul id="slider">
-    {% load static %}
-    <li><img src="{% static 'img/sliders/1.jpg' %}" alt="" width="1300" height="300"></li>
-    <li><img src="{% static 'img/sliders/2.jpg' %}" alt="" width="1300" height="300"></li>
-    <li><img src="{% static 'img/sliders/3.jpg' %}" alt="" width="1300" height="300"></li>
-  </ul>
-  <button id="next" class="carousel-control-next" style="margin-right: 55px"><span class="carousel-control-next-icon"></span></button>
-  <button id="prev" class="carousel-control-prev" style="margin-left: 60px"><span class="carousel-control-prev-icon"></span></button>
-<br>
+  <br>
+ <div class="slider">
+      <div class="slides">
+        <!--radio buttons start-->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <!--radio buttons end-->
+        <!--slide images start-->
+        <div class="slide first">
+          <img src="{% static 'img/sliders/1.jpg' %}" alt="" width="1300" height="300">
+        </div>
+        <div class="slide">
+          <img src="{% static 'img/sliders/2.jpg' %}" alt="" width="1300" height="300">
+        </div>
+        <div class="slide">
+          <img src="{% static 'img/sliders/3.jpg' %}" alt="" width="1300" height="300">
+        </div>
+        <!--slide images end-->
+        <!--automatic navigation start-->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+        </div>
+        <!--automatic navigation end-->
+      </div>
+      <!--manual navigation start-->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+      </div>
+      <!--manual navigation end-->
+    </div>
+  <br>
 </div>
 {% load booktags %}
 {% get_new_books %}

@@ -15,6 +15,9 @@ urlpatterns = [
     path('home/selections/selection4', views.selection4, name='selection4'),
     path('home/stocks', views.stocks, name='stocks'),
     path('home/selection_all', views.selection_all, name='selection_all'),
+    path('cart/', views.add_to_cart, name='cart'),
+    path('get_cart_data/', views.get_cart_data, name='get_cart_data'),
+    path('change_quan/', views.change_quan, name='change_quan'),
 
 
 ]

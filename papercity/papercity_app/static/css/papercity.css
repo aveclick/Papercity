@@ -197,6 +197,7 @@ input[type="search"]
   max-height:300px;
 }
 
+/* Используется в home.html, cart.html */
 .container
 {
   min-width: 1310px;

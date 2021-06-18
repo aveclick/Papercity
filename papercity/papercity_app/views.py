@@ -12,10 +12,13 @@ class Search(ListView):
     template_name = 'papercity_app/search.html'
 
     def get_queryset(self):
-        query = self.request.GET.get('q')
-        a = "".join(query[0].upper()) + query[1:]
-        object_list = Books.objects.filter(Q(title__icontains=a) | Q(author__name__icontains=a))
-        return object_list
+        try:
+            query = self.request.GET.get('q')
+            a = "".join(query[0].upper()) + query[1:]
+            object_list = Books.objects.filter(Q(title__icontains=a) | Q(author__name__icontains=a))
+            return object_list
+        except IndexError:
+            pass
 
 class BookView(ListView):
     """Список книг"""

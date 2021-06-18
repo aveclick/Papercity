@@ -25,7 +25,8 @@
     <br>
 
     <div id="content">
-        <h3>Все книги</h3>
+        <h3>Результаты поиска</h3>
+        {% if object_list %}
     <div class="row row-cols-1 row-cols-md-4 g-4">
          {% for book in object_list %}
         <div class="col">
@@ -53,7 +54,16 @@
             </div>
         </div>
         </div>
-        {% endfor %}
+         {% endfor %}
+          {% else %}
+        <br>
+        <h4>По данному запросу ничего не найдено</h4>
+        <h5>Попробуйте дополнить запрос: укажите автора или добавьте ключевые слова, связанные с товаром.</h5>
+        <br>
+        <h4><b>Рекомендации</b></h4>
+        {% get_empty_books %}
+        <br>
+        {% endif %}
     </div>
     </div>
 {% endblock %}

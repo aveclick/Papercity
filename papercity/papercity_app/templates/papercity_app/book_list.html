@@ -2,7 +2,6 @@
 {% block content %}
 <br>
 {% load booktags %}
-
 <div id="menu">
     <h2><b>Книги</b></h2>
     <br>
@@ -12,6 +11,8 @@
             <li class="item1"><a href="/book_list" style="background-color: lightsteelblue;">Книги</a>
                 <ul class="menu1">
                     {% get_categories %}
+
+
                 </ul>
             </li>
         </ul>
@@ -25,7 +26,7 @@
     <br>
 
     <div id="content">
-        <h3>Все книги</h3>
+       <h3>Все книги этой категории</h3>
     <div class="row row-cols-1 row-cols-md-4 g-4">
          {% for book in book_list %}
         <div class="col">

@@ -622,3 +622,9 @@ button
 #radio4:checked ~ .navigation-auto .auto-btn4{
   background: #40D3DC;
 }
+
+.menu2 li
+{
+    margin: 20px;
+    font-size: 20px;
+}

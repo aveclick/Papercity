@@ -11,8 +11,6 @@
             <li class="item1"><a href="/book_list" style="background-color: lightsteelblue;">Книги</a>
                 <ul class="menu1">
                     {% get_categories %}
-
-
                 </ul>
             </li>
         </ul>
@@ -46,7 +44,12 @@
                         <h4><b>{{book.price}} ₽</b></h4>
                     </div>
                     <div class="col">
-                        <button style="margin-left: 35px;color: white;">Купить</button>
+                        <form action="{% url 'cart' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" value="{{ book.id }}" name="pid">
+                            <input type="hidden" value="1" name="qty">
+                            <button type="submit" style="margin-left: 35px;color: white;">Купить</button>
+                        </form>
                     </div>
                 </div>
             </div>

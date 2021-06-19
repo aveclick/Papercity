@@ -102,9 +102,9 @@ def get_cart_data(request):
 
 
 def change_quan(request):
-    if "quantity" in request.GET:
+    if "count" in request.GET:
         cid = request.GET["cid"]
-        qty = request.GET["quantity"]
+        qty = request.GET["count"]
         cart_obj = get_object_or_404(Cart, id=cid)
         cart_obj.count = qty
         cart_obj.save()

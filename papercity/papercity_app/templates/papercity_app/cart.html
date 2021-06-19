@@ -34,24 +34,24 @@
                 </thead>
                 <tbody>
                     {% for item in items %}
-                        <tr>
+                        <tr id="row{{item.id}}">
                             <td><img src="{{ item.book.photo.url }}" width="160" height="250"></td>
                             <td>{{ item.book.title }}</td>
                             <td>{{ item.book.price }} &#8381</td>
                             <td>
                             <div class="row" style="width: 150px">
                                 <div class="col-md-3">
-                                    <i class="fa fa-plus" onclick="change_quan('{{item.id}}','plus')"></i>
+                                    <i class="fa fa-plus" style="margin-top: 10px" onclick="change_quan('{{item.id}}','plus')"></i>
                                 </div>
                                 <div class="col-md-6">
                                     <input type="number" value="{{ item.count }}" class="form-control" id="cart{{item.id}}">
                                 </div>
                                 <div class="col-md-3">
-                                    <i class="fa fa-minus" onclick="change_quan('{{item.id}}','minus')"></i>
+                                    <i class="fa fa-minus" style="margin-top: 10px" onclick="change_quan('{{item.id}}','minus')"></i>
                                 </div>
                             </div>
                             </td>
-                            <td><a href="#" class="btn btn-danger">&times; Удалить</a></td>
+                            <td><button onclick="remove_cart('{{item.id}}')" class="btn btn-danger">Удалить</button></td>
                         </tr>
 
                     {% endfor %}
@@ -60,7 +60,7 @@
         </div>
 
         <div class="col-md-3 my-5">
-               <div style="box-shadow:0px 0px 10px gray;">
+               <div style="box-shadow:0 0 10px gray;">
                <h2 class="text-center">ИТОГ</h2>
             <table class="table">
                 <tr>
@@ -80,8 +80,8 @@
             </table>
             <div class="p-3">
                 <a href="#">
-                <button type="submit" style="color: white; margin-top: 10px; width: 100%">Начать оформление</button>
-                <span id="btamt"></span>
+                <button type="submit" style="color: white; margin-top: 10px; width: 100%">Приступить к оплате
+                <span id="btamt"></span></button>
                 </a>
             </div>
         </div>
@@ -96,7 +96,7 @@
                success:function(data){
                    save = data.total;
                    $("#item_total").html(data.total + " &#8381;");
-                    $("#quantity").html(data.quan+" шт.");
+                    $("#quantity").html(data.quan +" шт.");
                     $("#grand_total").html(data.total + " &#8381;");
                     $("#btamt").html(data.total + " &#8381;");
 
@@ -121,13 +121,25 @@
            $.ajax({
                url:"{% url 'change_quan' %}",
                type:"get",
-               data:{cid:id, quantity:quan},
+               data:{cid:id, count:quan},
                success:function(data){
                    grandTotal();
                  if(data==0){
                     remove_cart(id);
                  }
                }
+           })
+       }
+
+       function remove_cart(id){
+           $.ajax({
+               url:"{% url 'change_quan' %}",
+               data:{delete_cart:id},
+               success:function(data){
+                    grandTotal();
+                    $("#row"+id).hide();
+               }
+
            })
        }
     </script>

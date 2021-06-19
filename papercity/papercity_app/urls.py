@@ -20,5 +20,4 @@ urlpatterns = [
     path('change_quan/', views.change_quan, name='change_quan'),
     path('home/terms', views.terms, name='terms'),
 
-
 ]

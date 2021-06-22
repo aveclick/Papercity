@@ -84,8 +84,7 @@ def add_to_cart(request):
                 c.save()
                 context["msz"] = "{} добавлен в Вашу корзину".format(book.title)
                 context["cls"] = "alert alert-success"
-    else:
-        context["status"] = 'Для добавления товара в корзину необходимо войти в аккаунт.'
+
     return render(request, "papercity_app/cart.html", context)
 
 def get_cart_data(request):

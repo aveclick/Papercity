@@ -38,7 +38,10 @@
 ![8](/screenshots/8.png)
 
 # Первый запуск
+```
+git clone https://github.com/aveclick/django_papercity.git
 cd papercity
 pip install django
 pip install Pillow
 python manage.py runserver
+```

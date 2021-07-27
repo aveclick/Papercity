@@ -45,3 +45,5 @@ pip install django
 pip install Pillow
 python manage.py runserver
 ```
+
+22.06.2021

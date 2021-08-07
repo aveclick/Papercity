@@ -43,6 +43,7 @@ git clone https://github.com/aveclick/django_papercity.git
 cd papercity
 pip install django
 pip install Pillow
+pip install django-crispy-forms
 python manage.py runserver
 ```
 
